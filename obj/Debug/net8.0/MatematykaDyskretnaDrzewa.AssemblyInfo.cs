@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MatematykaDyskretnaDrzewa")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ddb448674120f370aa70daeebcea0030fd3469d7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0442b7060ff6879e9a11ed0559f3188ebc41a4d0")]
 [assembly: System.Reflection.AssemblyProductAttribute("MatematykaDyskretnaDrzewa")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MatematykaDyskretnaDrzewa")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -19,10 +19,6 @@ for (int i = 0; i < n; i++)
 {
     V.Add(i+1);
 }
-for (int i = 0; i < n; i++)
-{
-    Console.WriteLine(V[i]);
-}
 int help = rnd.Next(n);
 T.Add(V[help]);
 V.RemoveAt(help);
@@ -60,13 +56,50 @@ do
     
 
 }while(result == false);
-for (int i = 0; i < n; i++)
+UIexit(edges);
+/*Funkcja generująca ładny ekranik na końcu programu z macierzą, tymi potęgami i czymś jeszcze idk */
+void UIexit(bool[,] edges)
 {
-    for (int j = 0; j < n; j++)
+    Console.Clear();
+    //Przedstawienie Grupy
+    Console.WriteLine("Informatyka Stacjonarne 4 Semestr Grupa 2a\nMateusz Piegzik\nOliwia Nieradzik\nJakub Lis\nPiotr Owczorz");
+    //Przedstawienie macierzy 
+    Console.WriteLine("Macierz krawędzi:");
+    Console.Write("\n |");
+    for (int i = 0; i < n; i++)
     {
-        Console.Write((Convert.ToInt32(edges[i, j])).ToString() + '|');
+        Console.Write($"{i + 1}|");
     }
     Console.WriteLine();
+    for (int i = 0; i < n; i++)
+    {
+        Console.Write($"{i + 1}|");
+        for (int j = 0; j < n; j++)
+        {
+            Console.Write((Convert.ToInt32(edges[i, j])).ToString() + '|');
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine("Ciąg wag punktów");
+    List<int> deg = new List<int>();
+    for (int i = 0; i < n; i++)
+    {
+        int count = 0;
+        for (int j = i; j < n; j++)
+        {
+            if (edges[i, j]) count++;
+        }
+        if(count!=0)deg.Add(count);
+    }
+    deg.Sort();
+    string ciagDeg = "{ ";
+    for (int i = 0;i < deg.Count; i++) 
+    {
+        ciagDeg += $"{deg[i]}, ";
+    }
+    ciagDeg = ciagDeg.Remove(ciagDeg.Length-2);
+    ciagDeg += " }";
+    Console.WriteLine(ciagDeg);
 }
 /*Funkcja służąca do deklarowania edge'ów naszego drzewa, przymuje punkt T i punkt V a także Macierz edge'ów, 
  * sprawdza czy stopień punkta T jest wyższy od granicy, jak tak to robi returna z 0, jak nie, deklaruje połączenia w macierzy a potem zwraca true

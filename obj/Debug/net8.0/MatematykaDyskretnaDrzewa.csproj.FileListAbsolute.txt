@@ -12,3 +12,4 @@ C:\Users\Piegzon\source\repos\MatematykaDyskretnaDrzewa\MatematykaDyskretnaDrzew
 C:\Users\Piegzon\source\repos\MatematykaDyskretnaDrzewa\MatematykaDyskretnaDrzewa\obj\Debug\net8.0\MatematykaDyskretnaDrzewa.pdb
 C:\Users\Piegzon\source\repos\MatematykaDyskretnaDrzewa\MatematykaDyskretnaDrzewa\obj\Debug\net8.0\MatematykaDyskretnaDrzewa.genruntimeconfig.cache
 C:\Users\Piegzon\source\repos\MatematykaDyskretnaDrzewa\MatematykaDyskretnaDrzewa\obj\Debug\net8.0\ref\MatematykaDyskretnaDrzewa.dll
+C:\Users\Piegzon\source\repos\MatematykaDyskretnaDrzewa\MatematykaDyskretnaDrzewa\obj\Debug\net8.0\MatematykaDyskretnaDrzewa.sourcelink.json

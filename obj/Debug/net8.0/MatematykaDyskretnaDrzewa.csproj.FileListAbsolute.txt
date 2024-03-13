@@ -1,0 +1,14 @@
+C:\Users\Piegzon\source\repos\MatematykaDyskretnaDrzewa\MatematykaDyskretnaDrzewa\bin\Debug\net8.0\MatematykaDyskretnaDrzewa.exe
+C:\Users\Piegzon\source\repos\MatematykaDyskretnaDrzewa\MatematykaDyskretnaDrzewa\bin\Debug\net8.0\MatematykaDyskretnaDrzewa.deps.json
+C:\Users\Piegzon\source\repos\MatematykaDyskretnaDrzewa\MatematykaDyskretnaDrzewa\bin\Debug\net8.0\MatematykaDyskretnaDrzewa.runtimeconfig.json
+C:\Users\Piegzon\source\repos\MatematykaDyskretnaDrzewa\MatematykaDyskretnaDrzewa\bin\Debug\net8.0\MatematykaDyskretnaDrzewa.dll
+C:\Users\Piegzon\source\repos\MatematykaDyskretnaDrzewa\MatematykaDyskretnaDrzewa\bin\Debug\net8.0\MatematykaDyskretnaDrzewa.pdb
+C:\Users\Piegzon\source\repos\MatematykaDyskretnaDrzewa\MatematykaDyskretnaDrzewa\obj\Debug\net8.0\MatematykaDyskretnaDrzewa.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Piegzon\source\repos\MatematykaDyskretnaDrzewa\MatematykaDyskretnaDrzewa\obj\Debug\net8.0\MatematykaDyskretnaDrzewa.AssemblyInfoInputs.cache
+C:\Users\Piegzon\source\repos\MatematykaDyskretnaDrzewa\MatematykaDyskretnaDrzewa\obj\Debug\net8.0\MatematykaDyskretnaDrzewa.AssemblyInfo.cs
+C:\Users\Piegzon\source\repos\MatematykaDyskretnaDrzewa\MatematykaDyskretnaDrzewa\obj\Debug\net8.0\MatematykaDyskretnaDrzewa.csproj.CoreCompileInputs.cache
+C:\Users\Piegzon\source\repos\MatematykaDyskretnaDrzewa\MatematykaDyskretnaDrzewa\obj\Debug\net8.0\MatematykaDyskretnaDrzewa.dll
+C:\Users\Piegzon\source\repos\MatematykaDyskretnaDrzewa\MatematykaDyskretnaDrzewa\obj\Debug\net8.0\refint\MatematykaDyskretnaDrzewa.dll
+C:\Users\Piegzon\source\repos\MatematykaDyskretnaDrzewa\MatematykaDyskretnaDrzewa\obj\Debug\net8.0\MatematykaDyskretnaDrzewa.pdb
+C:\Users\Piegzon\source\repos\MatematykaDyskretnaDrzewa\MatematykaDyskretnaDrzewa\obj\Debug\net8.0\MatematykaDyskretnaDrzewa.genruntimeconfig.cache
+C:\Users\Piegzon\source\repos\MatematykaDyskretnaDrzewa\MatematykaDyskretnaDrzewa\obj\Debug\net8.0\ref\MatematykaDyskretnaDrzewa.dll

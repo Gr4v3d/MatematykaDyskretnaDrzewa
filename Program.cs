@@ -2,7 +2,7 @@
 //Ograniczenia
 const int n = 8;
 //Maksymalny stopień
-const int gr = 4;
+const int gr = 5; //mamy mieć granice 5 i 6
 //Set-up
 bool[,] edges = new bool[n, n];
 for(int i = 0; i < n; i++)
@@ -140,7 +140,7 @@ void Archiwizuj(bool[,] edges, int ErCount)
     if (!File.Exists(path))
     {
         using (FileStream fs = File.Create(path))
-        zapis += "Informatyka Stacjonarne 4 Semestr Grupa 2a\nMateusz Piegzik\nOliwia Nieradzik\nJakub Lis\nPiotr Owczorz";
+        zapis += "UBB WBMiI Informatyka Stacjonarne 4 Semestr Grupa 2a\nMateusz Piegzik\nOliwia Nieradzik\nJakub Lis\nPiotr Owczorz\nTemat Projektu: Drzewa";
     }
     zapis+=$"\n\n{DateTime.Now}\nMacierz krawędzi:\n |";
     for (int i = 0; i < n; i++)
@@ -178,7 +178,20 @@ void Archiwizuj(bool[,] edges, int ErCount)
     ciagDeg = ciagDeg.Remove(ciagDeg.Length - 2);
     ciagDeg += " }";
     zapis+="\n"+ciagDeg+"\n";
-
+    //Zbiór Krawędzi
+    zapis += "\nZbiór krawędzi:\n{";
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = i; j < n; j++)
+        {
+            if (edges[i, j])
+            {
+                zapis += "{" + (i+1) + "," + (j+1) + "} , ";
+            };
+        }
+    }
+    zapis = zapis.Remove(zapis.Length - 3);
+    zapis += "}\n";
     //Ilość błędów
     zapis += $"\n Ilość \"Błędów\" podczas prób podłączenia punktu zbioru V pod punkt zbioru T: {ErCount}\n";
     for(int i = 0; i<30;i++) { zapis += "-"; }

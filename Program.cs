@@ -121,7 +121,7 @@ bool join(int T, int V, bool[,] A)
     {
         if (A[T-1,j]==true) { deg++; }
     }
-    if(deg < gr)
+    if(deg < gr - 1)
     {
         A[T - 1, V - 1] = true;
         A[V - 1, T - 1] = true;
@@ -170,6 +170,7 @@ void Archiwizuj(bool[,] edges, int ErCount)
         if (count != 0) deg.Add(count);
     }
     deg.Sort();
+    deg.Reverse();
     string ciagDeg = "{ ";
     for (int i = 0; i < deg.Count; i++)
     {

@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks.Dataflow;
+﻿using System.IO;
+using System.Threading.Tasks.Dataflow;
 //Ograniczenia
 const int n = 8;
 //Maksymalny stopień
@@ -65,52 +66,14 @@ do
 
 }while(result == false);
 //Wypis na Terminal
-UIexit(edges);
-Archiwizuj(edges,ErrorCount);
-/*Funkcja generująca ładny ekranik na końcu programu z macierzą, tymi potęgami i czymś jeszcze idk */
-void UIexit(bool[,] edges)
+string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\MDDrzewoWynik.txt";
+using (StreamWriter streamWriter = new StreamWriter(path, true))
 {
-    Console.Clear();
-    //Przedstawienie Grupy
-    Console.WriteLine("Informatyka Stacjonarne 4 Semestr Grupa 2a\nMateusz Piegzik\nOliwia Nieradzik\nJakub Lis\nPiotr Owczorz");
-    //Przedstawienie macierzy 
-    Console.WriteLine("Macierz krawędzi:");
-    Console.Write("\n |");
-    for (int i = 0; i < n; i++)
-    {
-        Console.Write($"{i + 1}|");
-    }
-    Console.WriteLine();
-    for (int i = 0; i < n; i++)
-    {
-        Console.Write($"{i + 1}|");
-        for (int j = 0; j < n; j++)
-        {
-            Console.Write((Convert.ToInt32(edges[i, j])).ToString() + '|');
-        }
-        Console.WriteLine();
-    }
-    Console.WriteLine("Ciąg wag punktów");
-    List<int> deg = new List<int>();
-    for (int i = 0; i < n; i++)
-    {
-        int count = 0;
-        for (int j = i; j < n; j++)
-        {
-            if (edges[i, j]) count++;
-        }
-        if(count!=0)deg.Add(count);
-    }
-    deg.Sort();
-    string ciagDeg = "{ ";
-    for (int i = 0;i < deg.Count; i++) 
-    {
-        ciagDeg += $"{deg[i]}, ";
-    }
-    ciagDeg = ciagDeg.Remove(ciagDeg.Length-2);
-    ciagDeg += " }";
-    Console.WriteLine(ciagDeg);
+    streamWriter.Write(Archiwizuj(edges, ErrorCount));
 }
+Console.WriteLine(Archiwizuj(edges,ErrorCount));
+/*Funkcja generująca ładny ekranik na końcu programu z macierzą, tymi potęgami i czymś jeszcze idk */
+
 /*Funkcja służąca do deklarowania edge'ów naszego drzewa, przymuje punkt T i punkt V a także Macierz edge'ów, 
  * sprawdza czy stopień punkta T jest wyższy od granicy, jak tak to robi returna z 0, jak nie, deklaruje połączenia w macierzy a potem zwraca true
  BOOL'owy ZWROT jest ważny bo pozwala na sprawdzenie czy połączenie w ogule zostało zrobione, czy nie trzeba powtarzać z innym punktem T */
@@ -133,7 +96,7 @@ bool join(int T, int V, bool[,] A)
     }
 }
 /*To samo co UIExit tylko tutaj wynik zapisuje do pliku MDDrzewoWynik.txt w folderze Dokumenty*/
-void Archiwizuj(bool[,] edges, int ErCount)
+string Archiwizuj(bool[,] edges, int ErCount)
 {
     string zapis = "";
     string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\MDDrzewoWynik.txt";
@@ -196,9 +159,5 @@ void Archiwizuj(bool[,] edges, int ErCount)
     //Ilość błędów
     zapis += $"\n Ilość \"Błędów\" podczas prób podłączenia punktu zbioru V pod punkt zbioru T: {ErCount}\n";
     for(int i = 0; i<30;i++) { zapis += "-"; }
-    using(StreamWriter streamWriter = new StreamWriter(path,true))
-    {
-        streamWriter.Write(zapis);
-    }
-
+    return zapis;
 }

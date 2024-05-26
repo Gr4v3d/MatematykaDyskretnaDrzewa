@@ -65,18 +65,16 @@ do
     
 
 }while(result == false);
-//Wypis na Terminal
+
 string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\MDDrzewoWynik.txt";
 using (StreamWriter streamWriter = new StreamWriter(path, true))
 {
     streamWriter.Write(Archiwizuj(edges, ErrorCount));
 }
 Console.WriteLine(Archiwizuj(edges,ErrorCount));
-/*Funkcja generująca ładny ekranik na końcu programu z macierzą, tymi potęgami i czymś jeszcze idk */
 
-/*Funkcja służąca do deklarowania edge'ów naszego drzewa, przymuje punkt T i punkt V a także Macierz edge'ów, 
- * sprawdza czy stopień punkta T jest wyższy od granicy, jak tak to robi returna z 0, jak nie, deklaruje połączenia w macierzy a potem zwraca true
- BOOL'owy ZWROT jest ważny bo pozwala na sprawdzenie czy połączenie w ogule zostało zrobione, czy nie trzeba powtarzać z innym punktem T */
+/*Funkcja służąca do deklarowania krawędzi naszego drzewa, przymuje punkt T i punkt V a także Macierz krawędzi, 
+ * sprawdza czy stopień punkta T jest wyższy od granicy, zwraca false, jeśli nie, deklaruje połączenia w macierzy a potem zwraca true*/
 bool join(int T, int V, bool[,] A)
 {
     int deg = 0;
@@ -95,7 +93,7 @@ bool join(int T, int V, bool[,] A)
         return false;
     }
 }
-/*To samo co UIExit tylko tutaj wynik zapisuje do pliku MDDrzewoWynik.txt w folderze Dokumenty*/
+/*Funkcja służąca do stworzenia łancucha używanego do zapisu wyniku do pliku, a także wyświetlania go w ekranie konsoli*/
 string Archiwizuj(bool[,] edges, int ErCount)
 {
     string zapis = "";
@@ -143,6 +141,7 @@ string Archiwizuj(bool[,] edges, int ErCount)
     ciagDeg += " }";
     zapis+="\n"+ciagDeg+"\n";
     //Zbiór Krawędzi
+    double m = 0;
     zapis += "\nZbiór krawędzi:\n{";
     for (int i = 0; i < n; i++)
     {
@@ -150,14 +149,18 @@ string Archiwizuj(bool[,] edges, int ErCount)
         {
             if (edges[i, j])
             {
+                m+= 1;
                 zapis += "{" + (i+1) + "," + (j+1) + "} , ";
             };
         }
     }
     zapis = zapis.Remove(zapis.Length - 3);
     zapis += "}\n";
+    //Gęstość Grafu
+    var d = (double)((2 * (double)m) / ((double)n * (double)n - (double)n));
+    zapis += $"\nGęstość Grafu wynosi: {d}\n";
     //Ilość błędów
-    zapis += $"\n Ilość \"Błędów\" podczas prób podłączenia punktu zbioru V pod punkt zbioru T: {ErCount}\n";
+    zapis += $"\nIlość \"Błędów\" podczas prób podłączenia punktu zbioru V pod punkt zbioru T: {ErCount}\n";
     for(int i = 0; i<30;i++) { zapis += "-"; }
     return zapis;
 }
